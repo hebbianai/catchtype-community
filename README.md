@@ -1,4 +1,6 @@
-# Catchtype 커뮤니티
+<p align="center"><a href="https://catchtype.com"><img src=".github/icon.png" width="96" height="96" alt="Catchtype"></a></p>
+
+<h1 align="center">Catchtype 커뮤니티</h1>
 
 [Catchtype](https://catchtype.com) 사용자 모임이에요. Catchtype은 한/영 키 없이 그냥 치면 한글과 영어를 알아서 바꿔 주는 입력 도구예요.
 
