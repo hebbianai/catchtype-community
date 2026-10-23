@@ -1,8 +1,8 @@
-<p align="center"><a href="https://catchtype.com"><img src=".github/icon.png" width="96" height="96" alt="Catchtype"></a></p>
+<p align="center"><a href="https://catchtype.com/?utm_source=github&utm_medium=referral&utm_campaign=community&utm_content=readme_logo"><img src=".github/icon.png" width="96" height="96" alt="Catchtype"></a></p>
 
 <h1 align="center">Catchtype 커뮤니티</h1>
 
-[Catchtype](https://catchtype.com) 사용자 모임이에요. Catchtype은 한/영 키 없이 그냥 치면 한글과 영어를 알아서 바꿔 주는 입력 도구예요.
+[Catchtype](https://catchtype.com/?utm_source=github&utm_medium=referral&utm_campaign=community&utm_content=readme_intro) 사용자 모임이에요. Catchtype은 한/영 키 없이 그냥 치면 한글과 영어를 알아서 바꿔 주는 입력 도구예요.
 
 이 저장소는 [토론(Discussions)](https://github.com/hebbianai/catchtype-community/discussions)만 써요. 코드는 여기 없어요.
 
