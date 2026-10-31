@@ -7,14 +7,15 @@ This page lists, for each platform, what the Catchtype apps send over the intern
 - We checked this in the code on October 31, 2026: macOS and Linux 0.3.0-beta.14, Windows 0.3.0-beta.9.1, and the iPhone, iPad and Android code of the same day.
 - When what we send changes, we update this page and say so in the update notes.
 
-## What is never sent
+## Your keys and text
 
-**The keys you press and the text you type never leave your device.** Korean or English is always decided on the device. This promise will not change.
+**The keys you press and the text you type never leave your device.** Korean or English is always decided on the device. This promise will not change. The only exceptions are things you choose to send yourself.
 
-- There is no account. Nothing we send over the internet carries an ID for your device.
-- The only exceptions are things you send yourself.
-  - Feedback: what you write in the feedback window is sent. If you choose "Attach Debug Log", the debug log is sent too. It holds each changed word before and after, so it is part of what you typed. You see exactly what will be attached before you send.
-  - Moving words between devices: you move your learned words and a few settings yourself, by QR code or file. Catchtype never receives them. A file goes only where you send it.
+Today:
+
+- There is no account. Nothing the apps send over the internet carries an ID for your device.
+- Feedback: what you write in the feedback window is sent. If you choose "Attach Debug Log", the debug log is sent too. It holds each changed word before and after, so it is part of what you typed. It also holds the app name and the kind of input field, with times. Before you send, you can see it with "Show What Will Be Sent…".
+- Moving words between devices: you move your learned words and a few settings yourself, by QR code or file. This does not use the internet, and Catchtype does not receive them. A file goes only where you send it.
 
 ## At a glance
 
@@ -23,10 +24,10 @@ This page lists, for each platform, what the Catchtype apps send over the intern
 | macOS | Update check once a day (can be turned off) | Installing a new version, sending feedback |
 | Windows | Update check once a day (can be turned off) | Getting a new version, sending feedback |
 | Linux | Update check once a day (can be turned off) | Nothing. Your browser opens feedback and downloads |
-| iPhone and iPad | Nothing | Nothing. Safari opens links |
+| iPhone and iPad | Nothing | Nothing. Your browser or the App Store opens links |
 | Android | Nothing. It has no internet permission | Nothing. Your browser opens links |
 
-On every platform, links in the menu and settings (this site, the privacy policy, the app stores) open in your default browser. The apps do not fetch them.
+On every platform, links in the menu and settings (this site, the privacy policy, the app stores) open in your browser or the store app. The apps do not fetch them.
 
 ## macOS
 
@@ -42,19 +43,19 @@ On every platform, links in the menu and settings (this site, the privacy policy
 - With automatic checks off, the app does not connect on its own, and in-app news is hidden. "Check for Updates" checks once, when you click it.
 - What feedback sends: what you wrote, a way to reach you if you gave one, the app version, the OS name and version, your language, any photos (up to 3) and text file (1) you attach, and the debug log only if you choose it. Before you send, the window shows the app version, the OS and the attachment names. If sending fails, it is not retried on its own. How long we keep feedback is in the [privacy policy](https://catchtype.com/en/privacy?utm_source=github&utm_medium=referral&utm_campaign=community&utm_content=network_doc_feedback).
 - Moving words between devices ("Send My Words") does not use the internet. The app draws a QR code on screen or makes a `.catchtype` file. A file goes only where you send it (AirDrop, Mail and so on).
-- Permissions: Catchtype asks only for Accessibility. It uses it to see keys typed into other apps, put in the corrected text and read the text before the cursor. It uses notifications for update and secure-input notices.
+- Permissions: Catchtype asks for Accessibility. It uses it to see keys typed into other apps, put in the corrected text and read the text before the cursor. The first time it has an update or secure-input notice to show, it also asks to show notifications.
 - Catchtype for macOS is not an App Store app and runs outside the sandbox, so macOS does not limit its internet use. What it sends today is only what this table lists.
 
 ## Windows
 
 | What | When | Where | Why | How to turn it off |
 |---|---|---|---|---|
-| Version file (`GET /version.json`) | 1 minute after the app starts, then once a day | `catchtype.com` | To see whether a new version or in-app news is out | Turn off "Check Once a Day" in the tray menu |
+| Version file (`GET /version.json`) | At most once a day, at the earliest 1 minute after the app starts | `catchtype.com` | To see whether a new version or in-app news is out | Turn off "Check Once a Day" in the tray menu |
 | New version (`.zip`) | Only when you click "Download Version …" in the menu or the new-version notification | `catchtype.com` → `zm0bwixmbplndzsg.public.blob.vercel-storage.com` | To replace the app with the new version | Nothing downloads unless you click |
 | Feedback | Once, when you click Send in "Send Feedback…" | `catchtype.com`, plus `uoergtzcamayoebneffb.supabase.co` if you attach files | To deliver the feedback you chose to send | Sent only when you click |
 
-- The version file request has the User-Agent `Catchtype` only. Cookies are off, and there are no other headers and no body. It follows the Windows proxy settings.
-- With automatic checks off, no requests are made at all, and the new-version item never appears. The setting is kept as `updateCheckOff` in `%APPDATA%\Catchtype\settings.json`.
+- The version file request has no body. The only header Catchtype sets is the User-Agent, `Catchtype`, and cookies are off. The standard headers Windows adds are sent, such as Host, Connection and `Cache-Control: no-cache`. It follows the Windows proxy settings.
+- With automatic checks off, the app makes no requests on its own, and the new-version item never appears. The setting is kept as `updateCheckOff` in `%APPDATA%\Catchtype\settings.json`.
 - Before replacing anything, the app checks the zip's size, its SHA-256 and its Ed25519 signature against the key built into the app. If any of them does not match, nothing is changed.
 - Feedback sends the same as on macOS.
 - Permissions: none. The installer does not use the internet.
@@ -63,7 +64,7 @@ On every platform, links in the menu and settings (this site, the privacy policy
 
 | What | When | Where | Why | How to turn it off |
 |---|---|---|---|---|
-| Version file (`GET /version.json`) | 1 minute after the IBus input method starts, then once a day | `catchtype.com` | To show a desktop notification when a new version is out | Turn off "Check Once a Day" in the IBus menu |
+| Version file (`GET /version.json`) | At most once a day, at the earliest 1 minute after the IBus input method starts | `catchtype.com` | To show a desktop notification when a new version is out | Turn off "Check Once a Day" in the IBus menu |
 | Feedback form | When you choose "Send Feedback…" | Your browser opens `catchtype.com/feedback` | An IBus input method cannot open a window, so it uses the form on the site | Opens only when you choose it |
 
 - The version file is fetched with the system's libcurl. Without libcurl, nothing is fetched. The input method sets no User-Agent and does not turn on cookies. It follows redirects only to https, up to 5 times.
@@ -76,7 +77,7 @@ On every platform, links in the menu and settings (this site, the privacy policy
 
 - **The keyboard has no code that connects to the internet.** Every time before we upload the app, an automatic check makes sure no networking framework or socket call is in the keyboard. If one is found, we do not upload.
 - **The app makes no requests of its own either.** The same check makes sure there is no web request code (URLSession) anywhere in the app.
-- In the app, "Report a problem on the website" opens `catchtype.com/feedback` in Safari, and "Write a public App Store review" opens the App Store. From there, Safari and the App Store take over.
+- In the app, "Report a problem on the website" opens `catchtype.com/feedback` in your browser, and "Write a public App Store review" opens the App Store. From there, your browser and the App Store take over.
 - The app sometimes asks iOS to show the system review prompt. The App Store shows and handles that prompt.
 - Permissions: it does not ask for the camera, microphone, location, contacts, photos or notifications.
 
@@ -90,7 +91,7 @@ On iOS, a keyboard needs "Allow Full Access" for the things below. The Catchtype
 
 The warning iOS shows when you turn it on is the same text for every keyboard. Full Access would let a keyboard use the internet, but the Catchtype keyboard has no code for it.
 
-**Without it:** typing and the Korean/English decision work the same. There is no vibration, and settings you change in the app do not reach the keyboard. You can change them in the keyboard's quick settings instead (touch and hold the logo key). There is no Paste suggestion, and words the keyboard learned do not show up in the app.
+**Without it:** typing and the Korean/English decision work the same. There is no vibration, and settings you change in the app may not reach the keyboard (it depends on the iOS version). You can change them in the keyboard's quick settings instead (touch and hold the logo key). There is no Paste suggestion, and words the keyboard learned do not show up in the app.
 
 ### Moving words between devices
 
@@ -109,11 +110,11 @@ The iPhone's own camera app reads the QR code on your computer screen. The Catch
 
 ## Check it yourself
 
-Blocking the connections does not change typing or the Korean/English decision. Only the update check stops working. To use Catchtype with no connection from the start, block Catchtype in a firewall app and turn off automatic checks. On Windows and Linux, the first check happens 1 minute after start.
+Blocking the connections does not change typing or the Korean/English decision. What stops working is the update check and, on macOS and Windows, getting a new version in the app and sending feedback. To use Catchtype with no connection from the start, block Catchtype in a firewall app and turn off automatic checks. On Windows and Linux, the app checks at most once in 24 hours, at the earliest 1 minute after it starts. Restarting it does not make it check sooner.
 
 - **macOS:** With [LuLu](https://objective-see.org/products/lulu.html) (free, open source) or [Little Snitch](https://www.obdev.at/products/littlesnitch/), you can see where Catchtype connects and block it. Clicking "Check for Updates" in Settings → About makes one connection right away, which makes it easy to see. In Terminal, `lsof -i -n -P | grep -i catchtype` shows open connections.
 - **Windows:** Use [Wireshark](https://www.wireshark.org/) with the filter `dns.qry.name contains "catchtype"`, or a firewall app such as [GlassWire](https://www.glasswire.com/). In Windows Resource Monitor, look for `Catchtype.exe` on the Network tab.
-- **Linux:** Use Wireshark (same filter), `sudo nethogs`, or `sudo ss -tnp | grep ibus-engine-cat`. The version check happens only once a day, so a tool you leave running works best.
+- **Linux:** Use Wireshark (same filter), `sudo nethogs`, or `sudo ss -tnp | grep ibus-engine-cat`. The version check happens at most once a day, so a tool you leave running works best.
 - **iPhone and iPad:** Turn on Settings → Privacy & Security → App Privacy Report to see the domains each app contacted. You can also route the iPhone through a proxy on your computer (mitmproxy, Proxyman and so on).
 - **Android:** Use an app that logs connections per app through a local VPN, such as [PCAPdroid](https://github.com/emanuele-f/PCAPdroid) (free, open source). With a computer, `adb shell dumpsys package com.hebbianai.catchtype` shows the permissions it asks for. The internet permission is not there.
 

@@ -10,7 +10,7 @@
 
 ## 프라이버시
 
-- **치는 키와 문장은 기기 밖으로 보내지 않아요.** 한국어인지 영어인지는 언제나 기기 안에서 판단해요. 계정도 없어요.
+- **치는 키와 문장은 기기 밖으로 보내지 않아요.** 한국어인지 영어인지는 언제나 기기 안에서 판단해요. 지금은 계정도 없어요.
 - 데스크톱 앱(macOS·Windows·Linux)은 하루 한 번 catchtype.com에 새 판이 있는지 물어요. 끄면 저절로 연결하지 않아요.
   - macOS: 설정 → 일반 → '하루 한 번 자동으로 업데이트 확인'
   - Windows·Linux: 메뉴의 '하루 한 번 자동으로 확인'
@@ -50,7 +50,7 @@
 ## In English
 
 - **No source code here.** This repository is only for Discussions. Catchtype's input engine is not open source.
-- **Privacy:** the keys you press and the text you type never leave your device. Korean or English is always decided on the device. There is no account.
+- **Privacy:** the keys you press and the text you type never leave your device. Korean or English is always decided on the device. Today there is no account.
 - The desktop apps (macOS, Windows, Linux) ask catchtype.com once a day whether a new version is out. Turn it off and they do not connect on their own: on macOS, Settings → General → "Check for updates once a day"; on Windows and Linux, "Check Once a Day" in the menu.
 - The iPhone and iPad keyboard has no code that connects to the internet. The Android keyboard has no internet permission.
 - Feedback is sent only when you click Send.
