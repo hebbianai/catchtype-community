@@ -47,6 +47,8 @@
 - 디버그 기록을 붙일 때는 안에 든 글을 먼저 읽어 보세요.
 - 서로 존중해 주세요. 광고, 비방, 남의 개인정보는 지워요.
 
+[개발 응원하기 ☕](https://buymeacoffee.com/catchtype?utm_source=github&utm_medium=referral&utm_campaign=coffee&utm_content=readme)
+
 ## In English
 
 - **No source code here.** This repository is only for Discussions. Catchtype's input engine is not open source.
@@ -57,3 +59,4 @@
 - What is sent, when and where, and how to check it yourself: **[What Catchtype sends over the internet](docs/network.en.md)** · [Privacy Policy](https://catchtype.com/en/privacy?utm_source=github&utm_medium=referral&utm_campaign=community&utm_content=readme_privacy_en)
 - Download: [catchtype.com](https://catchtype.com/en/?utm_source=github&utm_medium=referral&utm_campaign=community&utm_content=readme_download_en#download) (macOS, Windows, Linux), [App Store](https://apps.apple.com/app/id6822543636), [Google Play](https://play.google.com/store/apps/details?id=com.hebbianai.catchtype)
 - Report a problem: "Send Feedback…" in the app menu, or the [feedback form](https://catchtype.com/en/feedback?utm_source=github&utm_medium=referral&utm_campaign=community&utm_content=readme_feedback_en).
+- [Support development ☕](https://buymeacoffee.com/catchtype?utm_source=github&utm_medium=referral&utm_campaign=coffee&utm_content=readme_en)
